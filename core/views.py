@@ -22,6 +22,7 @@ def CadastroForm(request):
 
            form.save()
            messages.success(request, 'CADASTRADO COM SUCESSO')
+           form = ProfissionalForm()
         context = {'form': form}
         return render(request, 'cadastro.html', context)
 

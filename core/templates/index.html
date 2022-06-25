@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <body>
 <!-------Profissionais--->
 
 <br>
 <h2 class="pb-2 text-center ">Qual serviço especializado você procura?</h2>
-  <h6 class="pb-2 text-center ">Ache o profissional que você precisa aqui, encanador, eletrecista, carpinteiro...</h6>
+  <h6 class="pb-2 text-center ">Ache o profissional que você precisa aqui</h6>
 
 <section class="container">
   <div class="container">
       <nav class="navbar navbar-light" style="background-color: #e3f2fd; ">
         <div class="container-fluid ">
-          <form class="d-flex" name="searchform" method="post" action="results.php"  >
+          <form class="d-flex" name="searchform" method="get" action=""  >
             <input class="form-control me-2" type="text" name="buscar"
-            placeholder="Pesquise por serviço" aria-label="Search">
-            <!---<input type="text"class="form-control me-2" placeholder=" CEP" aria-label="Zip">--->
+            placeholder="ainda em construção" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Buscar</button>
           </form>
         </div>
@@ -23,8 +23,8 @@
 </section>
 
 <!-----------explicação cadastro----------->
-<div class="container px-4 py-5" id="custom-cards">
-  <h2 class="pb-2 text-center ">3 Passos para divulgar o seu serviço</h2>
+<div class="container px-5 py-6" id="custom-cards">
+  <h2 class="pb-2 text-center ">2 Passos para divulgar o seu serviço</h2>
 
 <section class="container">
     <div class="row">
@@ -32,7 +32,7 @@
     <div class="card-group">
   <div class="card">
       <br>
-  <img src="./img/conta.png" height="100" width="100" style="display: block; margin: 0 auto;"   />
+  <img src="{%static 'img/conta.png'%}" height="100" width="100" style="display: block; margin: 0 auto;"   />
     <div class="card-body">
       <h5 class="card-title">1º Passo: Crie sua conta</h5>
       <p class="card-text">Em segundos você cria sua conta.</p>
@@ -41,19 +41,12 @@
     <!-------------->
   <div class="card">
       <br>
-  <img src="./img/cadastro.png" height="100" width="100" style="display: block; margin: 0 auto;"  />
+  <img src="{%static 'img/cadastro.png'%}" height="100" width="100" style="display: block; margin: 0 auto;"  />
     <div class="card-body">
       <h5 class="card-title">2º Passo: cadastre o seu serviço</h5>
       <p class="card-text">Mantenha sempre atualizada sua conta para que seus clientes possam te encontrar.</p>
       <!-------------->
-    </div>
-  </div>
-  <div class="card">
-      <br>
- <img src="./img/conta.png" height="100" width="100" style="display: block; margin: 0 auto;"  />
-    <div class="card-body">
-      <h5 class="card-title">3º Passo: Crie sua conta</h5>
-      <p class="card-text">Faça bons negócios e fidelize seus clientes.</p>
+
 
     </div>
   </div>
@@ -71,7 +64,7 @@
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
     <div class="col">
     <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-    style="background-image: url('img/anuncie.jpg') ;" >
+    style="background-image: url({%static 'img/anuncie-1.jpg'%}) ;" >
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Junte-se a nossa iniciativa</h2>
         </div>
@@ -80,7 +73,7 @@
 
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-      style="background-image: url('img/anuncie-1.jpg');">
+      style="background-image: url({%static 'img/anuncie-1.jpg'%}) ">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Se você viu isso, seus clientes também vão ver! Anuncie </h2>
         </div>
@@ -89,7 +82,7 @@
 
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-      style="background-image: url('img/anuncie-1.jpg');">
+      style="background-image: url({%static 'img/anuncie-1.jpg'%})">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Sem manter visibilidade sua empresa não vende</h2>
         </div>
@@ -98,10 +91,12 @@
 
   </div>
 
-<!-------profissionais em destaque--------->
-<div class="container px-4 py-5" id="custom-cards">
-  <h2 class="pb-2 ">Profissionais em destaque</h2>
-  <h6 class="pb-2 border-bottom">Peça sempre avaliação dos seus clientes</h6>
+<!-------sobre o site--------->
+<div class="container px-6 py-7" id="custom-cards">
+  <h2 class="pb-2 ">SOBRE O PI2</h2>
+  <h6 class="pb-2 border-bottom">somos alunos da area de TI da Univesp , que pensando em como utilizar nosso conhecimento para
+  melhorar a comunidade onde vivemos , aproveitamos o tema do projeto integrado para a criação desta plataforma, visando a divulgar gratuitamente
+  serviços , pois sabemos que esse momento atual de pandemia ceifou a renda e emprego de milhoes de pessoas</h6>
   <br>
 </div>
 

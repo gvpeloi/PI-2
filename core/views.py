@@ -1,4 +1,4 @@
-from django.views.generic import  TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from .forms import ProfissionalForm
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -16,6 +16,11 @@ class ProfissionalList(ListView):
 
 class ProfissioanlCreate(CreateView):
     model =Profissional
+    fields = '__all__'
+    success_url = reverse_lazy('profissionais')
+
+class ProfissionalUpdate(UpdateView):
+    model = Profissional
     fields = '__all__'
     success_url = reverse_lazy('profissionais')
 

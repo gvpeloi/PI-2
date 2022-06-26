@@ -1,4 +1,4 @@
-from django.views.generic import FormView, TemplateView
+from django.views.generic import  TemplateView, ListView, CreateView
 from .forms import ProfissionalForm
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -10,35 +10,15 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-def CadastroForm(request):
-    if request.method == 'GET':
-        form = ProfissionalForm()
-        context = {'form' : form }
-        return render(request, 'cadastro.html', context=context)
-    else:
-        request.method == 'POST'
-        form = ProfissionalForm(request.POST)
-        if form.is_valid():
+class ProfissionalList(ListView):
+    model = Profissional
+    queryset = Profissional.objects.all()
 
-           form.save()
-           messages.success(request, 'CADASTRADO COM SUCESSO')
-           form = ProfissionalForm()
-        context = {'form': form}
-        return render(request, 'cadastro.html', context)
+class ProfissioanlCreate(CreateView):
+    model =Profissional
+    fields = '__all__'
+    success_url = reverse_lazy('profissionais')
 
-def LoginForm(request):
-    form = ProfissionalForm
-    context = {
-        'form' : form
-    }
-    return render(request, 'login.html', context=context)
-
-class BaseView(TemplateView):
-    template_name = 'base.html'
-
-def Lista(request):
-    profissionais = Profissional,objects.all()
-    return render(request, 'profissionais.html', {'prof': prof})
 
 
 

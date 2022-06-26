@@ -51,9 +51,7 @@ class Profissional(models.Model):
 
 
 
-    class Meta:
-        verbose_name = 'Profissional'
-        verbose_name_plural = 'Profissionais'
+
 
 
     def __str__(self):

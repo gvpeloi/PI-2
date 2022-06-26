@@ -8,7 +8,7 @@
 <div class="offset-1 col-10 list-div ">
   <div class="container-fuid">
     <style> body {background-color: #808080;}</style>
-    <form action="{% url 'cadastro' %}" method="POST" class="form">
+    <form action="{% url 'create' %}" method="POST" class="form">
         <form <font color="#FF0000"> </font>
     {% csrf_token %}
     {{ form|bootstrap }}

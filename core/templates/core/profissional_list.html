@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% load bootstrap %}
+<body>
+   <h1>Lista de Profissionais</h1>
+   <div class="offset-1 col-10 list-div ">
+  <div class="container-fuid">
+    <style> body {background-color: #808080;}</style>
+      <ul>
+          {% for profissional in object_list %}
+          <li>{{profissional.nome}}</li>
+          <li>{{profissional.sobrenome}}</li>
+          <li>{{profissional.cpf}}</li>
+          <li>{{profissional.telefone}}</li>
+          <li>{{profissional.email}}</li>
+          <li>{{profissional.cidade}}</li>
+          <li>{{profissional.atividades}}</li>
+          {%endfor%}
+      </ul>
+       </div>
+    <table>
+    </table>
+</body>
+{% endblock %}

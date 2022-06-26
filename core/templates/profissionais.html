@@ -1,54 +1,31 @@
-% load bootstrap4 %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
+{% extends "base2.html" %}
+{% block content %}
+{% load bootstrap4 %}
 
+<link rel="stylesheet" href="css/style.css" />
 
-</head>
- <form action="{% url 'profissionais' %}" method="post" class="form" autocomplete="on" enctype="multipart/form-data">
-<body>
-    <div class="container">
-
-
-        <table class="table table-dark">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">nome</th>
-                    <th scope="col">email</th>
-                    <th scope="col">cpf</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for prof in profs %}
-                    <tr>
-                        <td scope="row">{{ prof }}</td>
-                        <td scope="row"><a href="#modal{{prof.id}}" data-toggle="modal">{{ prof.nome }}</a></td>
-                        <td scope="row">{{ prof.email }}</td>
-                        <td scope="row">{{ prof.cpf }}</td>
-                    </tr>
-                    <div class="modal fade bd-example-modal-lg show" id="modal{{prof.id}}" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body" id="dynamic-content">
-                                    <img src="{{ prof.imagem.url }}" class="img-fluid" alt="{{ prof.nome }}"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </tbody>
-        </table>
-
+  </head>
+  <body>
+    <div class="profile box">
+      {% for profissional in object_list %}
+      <img class="profile-pic" src="{{profissional.imagem}}" alt="Profile" />
+      <h1 class="title">{{profissional.nome}}, {{profissional.sobrenome}}</h1>
+      <span>{{profissional.cidade}}, {{profissional.estado}}</span>
+      <p>{{profissional.email}} | {{profissional.atividade}}</p>
+      <ul class="redes-sociais">
+        <li>
+          <a href="#"><img src="img/facebook.svg" alt="Facebook" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="img/instagram.svg" alt="Instagram" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="img/whatsapp.svg" alt="WhatsApp" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="img/linkedin.svg" alt="LinkedIn" /></a>
+        </li>
+      </ul>
+      {%endfor%}
     </div>
-
-</body>
-</html>
+  {% endblock %}

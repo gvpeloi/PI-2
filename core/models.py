@@ -47,8 +47,8 @@ class Profissional(models.Model):
     postal_code = BRPostalCodeField('cep', max_length=100)
     estado = models.CharField('estado', max_length=15, choices=ESTADOS_CHOICES)
     cidade = models.CharField('cidade', max_length=50)
-    atividades = models.TextField('fale sobre os serviços que voçe oferece')
-    imagem = models.ImageField(upload_to='media/images/', max_length=100, default='images/profile/avatar-default-icon.png')
+    atividades = models.CharField('Profissão', max_length=200)
+    imagem = models.ImageField(upload_to="imagens", null=True, blank=True)
 
 
 

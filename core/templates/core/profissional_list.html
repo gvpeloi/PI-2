@@ -1,30 +1,32 @@
-{% extends "base.html" %}
-{% load crispy_forms_tags %}
+{% extends "base2.html" %}
+{% load static %}
 {% block content %}
-{% load bootstrap4 %}
-{% bootstrap_css %}
-{% bootstrap_javascript jquery='full' %}
-{% load bootstrap %}
-<body>
-   <h1>Lista de Profissionais</h1>
-   <input type="submit" onclick="location.href= '{% url 'create' %}'" value ="Cadastrar Profissional">
-   <div class="offset-1 col-10 list-div ">
-  <div class="container-fuid">
-    <style> body {background-color: #808080;}</style>
-      <ul>
-          {% for profissional in object_list %}
-          <li>{{profissional.imagem}}</li>
-          <li>{{profissional.nome}} - <a href="{% url 'update' pk=profissional.id %}">Editar</a></li>
-          <li>{{profissional.sobrenome}}</li>
-          <li>{{profissional.cpf}}</li>
-          <li>{{profissional.telefone}}</li>
-          <li>{{profissional.email}}</li>
-          <li>{{profissional.cidade}}</li>
-          <li>{{profissional.atividades}}</li>
-          {%endfor%}
+
+<link rel="stylesheet" href="{%static 'css/estilo.css'%}" />
+<link rel="stylesheet" href="{%static 'css/style.css'%}" />
+<style> body {background-color: #808080;}</style>
+  <body>
+    <div class="profile box">
+      {% for profissional in object_list %}
+      {% if profissional.imagem == '' %}
+      <img class="profile-pic" src="{% static 'img/foto.png' %}" alt="{{profissional.nome}}" />
+      {% else %}
+      <img class="profile-pic" src="{{ profissional.imagem.url}}" alt="" />
+      {% endif %}
+      <h1 class="title">{{profissional.nome}} {{profissional.sobrenome}}</h1>
+      <span>{{profissional.cidade}}, {{profissional.estado}}</span>
+      <p>Profissão: {{profissional.atividades}} | E-mail : {{profissional.email}}</p>
+      <ul class="redes-sociais">
+        <li>
+          <a href="#"><img src="{%static 'img/whatsapp.svg' %}" alt="WhatsApp" /></a>
+        </li>
+          <li>
+             <a> {{profissional.telefone}}</a>
+          </li>
       </ul>
-       </div>
-    <table>
-    </table>
-</body>
-{% endblock %}
+    </div>
+    <div class="profile box">
+
+    {%endfor%}
+{% endblock content %}
+

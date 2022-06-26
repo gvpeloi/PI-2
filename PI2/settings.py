@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
     'core',
     'localflavor',
     'cpf_field',
@@ -132,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

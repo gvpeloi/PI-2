@@ -24,6 +24,10 @@
              <a> {{profissional.telefone}}</a>
           </li>
       </ul>
+      <li><button type="submit" class="btn btn-success" onclick="location.href= '{% url 'update' pk=profissional.id %}'">Editar</button>
+           <button type="submit" class="btn btn-danger" onclick="location.href= '{% url 'delete' pk=profissional.id %}'">Deletar</button>
+           <button type="submit" class="btn btn-primary" onclick="location.href= '{% url 'detail' pk=profissional.id %}'">Informação</button>
+      </li>
     </div>
     <div class="profile box">
 

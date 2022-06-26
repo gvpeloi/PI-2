@@ -14,14 +14,13 @@ li {
 
 body {
   font-family: "Source Code Pro", monospace;
-  background: color: #808080;
+  background: color: #000000;
   background-attachment: fixed;
   background-size: cover;
   display: grid;
   align-items: center;
-  justify-items: center;
   height: 100vh;
-  color: #0000FF;
+  color: #008080;
 }
 
 .title {
@@ -76,7 +75,7 @@ body {
   grid-template-columns: auto 1fr;
   text-align: left;
   gap: 1rem;
-  color: #606060;
+  color: #008B8B;
 }
 
 .portfolio li + li {

@@ -48,7 +48,7 @@ class Profissional(models.Model):
     estado = models.CharField('estado', max_length=15, choices=ESTADOS_CHOICES)
     cidade = models.CharField('cidade', max_length=50)
     atividades = models.CharField('Profissão', max_length=200)
-    imagem = models.ImageField(upload_to="imagens", null=True, blank=True)
+    imagem = StdImageField('Imagem', upload_to='media', variations={'thumb': (250, 250)})
 
 
 

@@ -11,7 +11,7 @@
       {% if profissional.imagem == '' %}
       <img class="profile-pic" src="{% static 'img/foto.png' %}" alt="{{profissional.nome}}" />
       {% else %}
-      <img class="profile-pic" src="{{ profissional.imagem.url}}" alt="" />
+      <img class="profile-pic" src="{{ profissional.imagem.thumb.url}}" alt="{{profissional.nome}}" />
       {% endif %}
       <h1 class="title">{{profissional.nome}} {{profissional.sobrenome}}</h1>
       <span>{{profissional.cidade}}, {{profissional.estado}}</span>

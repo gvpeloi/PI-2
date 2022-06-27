@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,11 +34,16 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
 
     'core',
     'localflavor',
@@ -47,6 +54,7 @@ INSTALLED_APPS = [
     'simplecep',
     'bootstrapform',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,7 +90,7 @@ WSGI_APPLICATION = 'PI2.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+""""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -93,8 +101,10 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-
+"""
+DATABASES = {
+    'default': dj_database_url()
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -135,8 +145,17 @@ MEDIA_URL = 'media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#allauth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+
+LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = 'index'
-LOGIN_REDIRECT_URL = 'login'
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

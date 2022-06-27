@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.views import View
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView, DeleteView
 from .forms import ProfissionalForm
 from django.contrib import messages
@@ -14,7 +15,6 @@ class IndexView(TemplateView):
 class ProfissionalList(ListView):
     model = Profissional
     queryset = Profissional.objects.all()
-
 
 
 class ProfissioanlCreate(CreateView):
@@ -35,6 +35,7 @@ class ProfissionalDetail(DetailView):
 class ProfissionalDelete(DeleteView):
     queryset = Profissional.objects.all()
     success_url = reverse_lazy('profissionais')
+
 
 
 

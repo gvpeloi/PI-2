@@ -1,10 +1,11 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 {% load bootstrap %}
+<title>CADASTRO</title>
 <div class="offset-1 col-10 list-div ">
   <style> body {background-color: #808080;}</style>
     <form action="{% url 'create' %}" method="post" class="form" autocomplete="on" enctype="multipart/form-data">

@@ -2,16 +2,16 @@
 {% load static %}
 {% block content %}
 
-
+<title>DETALHES</title>
 <link rel="stylesheet" href="{%static 'css/style.css'%}" />
 <style> body {background-color: #808080;}</style>
   <body>
 
     <div class="profile box">
-      <h1 class="title">Nome:{{object.nome}} {{object.sobrenome}}</h1>
-        <h2>CPF: {{object.cpf}} | CEP: {{object.postal_code}} </h2>
+      <h1 class="title">Nome:  {{object.nome}} {{object.sobrenome}}</h1>
+        <h2> CEP: {{object.postal_code}} </h2>
       <span> <h3>{{object.cidade}}, {{object.estado}}</h3></span>
-      <p> <h3>Profissão: {{object.atividades}} | E-mail : {{object.email}}</h3></p>
+      <p> <h3>Profissão: {{object.atividades}}   |   E-mail : {{object.email}}</h3></p>
       <ul class="redes-sociais">
         <li>
           <a href="#"><img src="{%static 'img/whatsapp.svg' %}" alt="WhatsApp" /></a>

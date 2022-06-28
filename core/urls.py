@@ -13,5 +13,4 @@ urlpatterns = [
     path('update/<int:pk>/', views.ProfissionalUpdate.as_view(), name ='update'),
     path('detail/<int:pk>/', views.ProfissionalDetail.as_view(), name ='detail'),
     path('delete/<int:pk>/', views.ProfissionalDelete.as_view(), name ='delete'),
-    path('accounts/', include('allauth.urls')),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

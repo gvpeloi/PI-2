@@ -7,7 +7,6 @@ from .models import Profissional
 class IndexView(TemplateView):
     template_name = 'index.html'
 
-
 class ProfissionalList(ListView):
     model = Profissional
     queryset = Profissional.objects.all()

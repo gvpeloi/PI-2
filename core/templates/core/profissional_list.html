@@ -17,11 +17,9 @@
       <span>{{profissional.cidade}}, {{profissional.estado}}</span>
       <p>Profissão: {{profissional.atividades}} | E-mail : {{profissional.email}}</p>
       <ul class="redes-sociais">
-        <li>
-          <a href="#"><img src="{%static 'img/whatsapp.svg' %}" alt="WhatsApp" /></a>
-        </li>
+
           <li>
-             <a> {{profissional.telefone}}</a>
+             <a>  WhatsApp  {{profissional.telefone}}</a>
           </li>
       </ul>
       <li><button type="submit" class="btn btn-success" onclick="location.href= '{% url 'update' pk=profissional.id %}'">Editar</button>

@@ -1,6 +1,5 @@
-from django.urls import path, include
-from django.urls import path
-from .views import IndexView, CreateView
+
+from .views import IndexView
 from django.conf import settings
 from django.conf.urls.static import static
 from core import views
@@ -15,5 +14,4 @@ urlpatterns = [
     path('detail/<int:pk>/', views.ProfissionalDetail.as_view(), name ='detail'),
     path('delete/<int:pk>/', views.ProfissionalDelete.as_view(), name ='delete'),
     path('accounts/', include('allauth.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

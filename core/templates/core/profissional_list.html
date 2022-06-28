@@ -1,4 +1,4 @@
-{% extends "base2.html" %}
+{% extends "base1.html" %}
 {% load static %}
 {% block content %}
 
@@ -19,7 +19,7 @@
       <ul class="redes-sociais">
 
           <li>
-             <a>  WhatsApp  {{profissional.telefone}}</a>
+             <a>  WhatsApp : {{profissional.telefone}}</a>
           </li>
       </ul>
       <li><button type="submit" class="btn btn-success" onclick="location.href= '{% url 'update' pk=profissional.id %}'">Editar</button>

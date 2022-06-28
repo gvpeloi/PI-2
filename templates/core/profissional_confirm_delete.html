@@ -1,0 +1,25 @@
+{% extends "base1.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% load bootstrap %}
+<title>Apagar Cadastro</title>
+<div class="offset-1 col-10 list-div ">
+  <div class="container-fuid">
+    <style> body {background-color: #808080;}</style>
+    <form method="POST" action="." enctype="multipart/form-data>
+        <font color="#FF0000"> </font>
+    <h1>Tem crteza que deseja apagar o cadastro '{{profissional.nome}}'?</h1>
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    </div>
+    <table>
+    </table>
+    <button type="submit" class="btn btn-danger">Sim, tenho certeza</button>
+    <button type="reset" class="btn btn-success" onclick="location.href= '{% url 'profissionais' %}'">Cancelar</button>
+  </form
+
+  </div>
+{% endblock %}
